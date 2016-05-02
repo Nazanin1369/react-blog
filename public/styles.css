@@ -7,8 +7,11 @@ html {
 body {
   /* Margin bottom by footer height */
   margin-bottom: 60px;
-  font-family: Georgia, "Times New Roman", Times, serif;
-  color: #555;
+  font-family: palatino, georgia, serif;
+    font-size: 20px;
+    background-color: #fcfcfc;
+    color: #272727;
+    line-height: 1.5em;
 }
 .footer {
   position: absolute;

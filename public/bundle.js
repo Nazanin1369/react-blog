@@ -24146,41 +24146,132 @@
 	                "div",
 	                { className: "container" },
 	                _react2.default.createElement(
-	                    "div",
-	                    { className: "page-header" },
+	                    "section",
+	                    { className: "posts" },
 	                    _react2.default.createElement(
-	                        "h1",
-	                        null,
-	                        "Sticky footer with fixed navbar"
+	                        "div",
+	                        { className: "post" },
+	                        _react2.default.createElement(
+	                            "h1",
+	                            null,
+	                            _react2.default.createElement(
+	                                "a",
+	                                { href: "/Two-Weird-Tricks-with-Redux" },
+	                                "Two Weird Tricks with Redux"
+	                            )
+	                        ),
+	                        _react2.default.createElement(
+	                            "div",
+	                            { className: "date" },
+	                            "April 13, 2016"
+	                        ),
+	                        _react2.default.createElement(
+	                            "p",
+	                            null,
+	                            "I have now used Redux pretty extensively in multiple projects by now, especially the Firefox Developer Tools. While I think it breaks down in a few specific scenarios, generally I think it holds up well in complex apps. Certainly nothing is perfect, and the good news is when you want to do something outside of the normal workflow, it’s not hard."
+	                        )
+	                    ),
+	                    _react2.default.createElement(
+	                        "div",
+	                        { className: "post" },
+	                        _react2.default.createElement(
+	                            "h1",
+	                            null,
+	                            _react2.default.createElement(
+	                                "a",
+	                                { href: "/RIP-Over-Engineered-Blog" },
+	                                "RIP Over-Engineered Blog"
+	                            )
+	                        ),
+	                        _react2.default.createElement(
+	                            "div",
+	                            { className: "date" },
+	                            "April 01, 2016"
+	                        ),
+	                        _react2.default.createElement(
+	                            "p",
+	                            null,
+	                            "It’s been 6 months since my last blog rewrite, so it’s time for another one. This time, let’s subtract."
+	                        )
+	                    ),
+	                    _react2.default.createElement(
+	                        "div",
+	                        { className: "post" },
+	                        _react2.default.createElement(
+	                            "h1",
+	                            null,
+	                            _react2.default.createElement(
+	                                "a",
+	                                { href: "/Moving-Breakpoints-Intelligently" },
+	                                "Moving Breakpoints Intelligently"
+	                            )
+	                        ),
+	                        _react2.default.createElement(
+	                            "div",
+	                            { className: "date" },
+	                            "February 26, 2016"
+	                        ),
+	                        _react2.default.createElement(
+	                            "p",
+	                            null,
+	                            "In most debuggers, a breakpoint will \"slide\" if the clicked line doesn't have any code. This is supposed to be a helpful feature, but it becomes **infuriating** if it behaves wrongly. In Firefox 46, we made our breakpoint sliding algorithm much more robust."
+	                        )
+	                    ),
+	                    _react2.default.createElement(
+	                        "div",
+	                        { className: "post" },
+	                        _react2.default.createElement(
+	                            "h1",
+	                            null,
+	                            _react2.default.createElement(
+	                                "a",
+	                                { href: "/On-the-Road-to-Better-Sourcemaps-in-the-Firefox-Developer-Tools" },
+	                                "On the Road to Better Sourcemaps in the Firefox Developer Tools"
+	                            )
+	                        ),
+	                        _react2.default.createElement(
+	                            "div",
+	                            { className: "date" },
+	                            "January 11, 2016"
+	                        ),
+	                        _react2.default.createElement(
+	                            "p",
+	                            null,
+	                            "In this post, I explain why it has taken so long to get the Firefox console sourcemapped. It requires an unobtrusive debug mode which is really hard to do, but we got it working. The console now has access to sourcemaps, so we are only one small step away from getting it working."
+	                        )
+	                    ),
+	                    _react2.default.createElement(
+	                        "div",
+	                        { className: "post" },
+	                        _react2.default.createElement(
+	                            "h1",
+	                            null,
+	                            _react2.default.createElement(
+	                                "a",
+	                                { href: "/Starters-and-Maintainers" },
+	                                "Starters and Maintainers"
+	                            )
+	                        ),
+	                        _react2.default.createElement(
+	                            "div",
+	                            { className: "date" },
+	                            "December 29, 2015"
+	                        ),
+	                        _react2.default.createElement(
+	                            "p",
+	                            null,
+	                            "\"It’s late Friday night, my wife is already asleep, and I finally found time to go through those pull requests on that old project I put up on github last year. My daughter is getting up at 7:30 though, so I better not stay up too late. ...\""
+	                        )
+	                    ),
+	                    _react2.default.createElement(
+	                        "div",
+	                        { className: "right-link" },
+	                        _react2.default.createElement(
+	                            "a",
+	                            { href: "/archive" },
+	                            "View All Posts"
+	                        )
 	                    )
-	                ),
-	                _react2.default.createElement(
-	                    "p",
-	                    { className: "lead" },
-	                    "Pin a fixed-height footer to the bottom of the viewport in desktop browsers with this custom HTML and CSS. A fixed navbar has been added with ",
-	                    _react2.default.createElement(
-	                        "code",
-	                        null,
-	                        "padding-top: 60px;"
-	                    ),
-	                    " on the ",
-	                    _react2.default.createElement(
-	                        "code",
-	                        null,
-	                        "body > .container"
-	                    ),
-	                    "."
-	                ),
-	                _react2.default.createElement(
-	                    "p",
-	                    null,
-	                    "Back to ",
-	                    _react2.default.createElement(
-	                        "a",
-	                        { href: "../sticky-footer" },
-	                        "the default sticky footer"
-	                    ),
-	                    " minus the navbar."
 	                )
 	            );
 	        }
