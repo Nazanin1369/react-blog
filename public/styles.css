@@ -28,7 +28,7 @@ body {
 /* Not required for template or sticky footer method. */
 
 .main-container > .container {
-  padding: 60px 15px 0;
+  padding: 60px 200px 0px 200px;
 }
 .container .text-muted {
   margin: 20px 0;
@@ -53,3 +53,4 @@ code {
     font-weight: 500;
     color: #fff !important;
 }
+
