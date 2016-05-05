@@ -35,7 +35,6 @@ class Content extends React.Component {
             <div className="container">
                <section className="posts">
                     <PostList posts={this.state.posts} />
-                    <div className="right-link"><a href="/archive">View All Posts</a></div>
                 </section>
             </div>
         )

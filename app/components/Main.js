@@ -3,11 +3,13 @@ import Footer from './Footer';
 import Content from './Content'
 import Navbar from './Navbar'
 
-const Main =  ({ history, children }) => {
+const Main =  ({ children }) => {
     return (
         <div className="main-container">
             <Navbar />
-            <Content />
+            <div className="container">
+                {children}
+            </div>
             <Footer />
         </div>
     )

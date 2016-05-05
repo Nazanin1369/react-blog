@@ -24013,7 +24013,7 @@
 	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
-	    value: true
+	   value: true
 	});
 
 	var _react = __webpack_require__(1);
@@ -24026,9 +24026,22 @@
 
 	var _Main2 = _interopRequireDefault(_Main);
 
+	var _Content = __webpack_require__(209);
+
+	var _Content2 = _interopRequireDefault(_Content);
+
+	var _Post = __webpack_require__(222);
+
+	var _Post2 = _interopRequireDefault(_Post);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	exports.default = _react2.default.createElement(_reactRouter.Route, { path: '/', component: _Main2.default });
+	exports.default = _react2.default.createElement(
+	   _reactRouter.Route,
+	   { path: '/', component: _Main2.default },
+	   _react2.default.createElement(_reactRouter.Route, { path: '/blog', component: _Content2.default }),
+	   _react2.default.createElement(_reactRouter.Route, { path: '/post/:postTitle', component: _Post2.default })
+	);
 
 /***/ },
 /* 207 */
@@ -24059,14 +24072,17 @@
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	var Main = function Main(_ref) {
-	    var history = _ref.history;
 	    var children = _ref.children;
 
 	    return _react2.default.createElement(
 	        'div',
 	        { className: 'main-container' },
 	        _react2.default.createElement(_Navbar2.default, null),
-	        _react2.default.createElement(_Content2.default, null),
+	        _react2.default.createElement(
+	            'div',
+	            { className: 'container' },
+	            children
+	        ),
 	        _react2.default.createElement(_Footer2.default, null)
 	    );
 	};
@@ -24196,16 +24212,7 @@
 	                _react2.default.createElement(
 	                    'section',
 	                    { className: 'posts' },
-	                    _react2.default.createElement(_PostList2.default, { posts: this.state.posts }),
-	                    _react2.default.createElement(
-	                        'div',
-	                        { className: 'right-link' },
-	                        _react2.default.createElement(
-	                            'a',
-	                            { href: '/archive' },
-	                            'View All Posts'
-	                        )
-	                    )
+	                    _react2.default.createElement(_PostList2.default, { posts: this.state.posts })
 	                )
 	            );
 	        }
@@ -25420,7 +25427,7 @@
 /* 214 */
 /***/ function(module, exports, __webpack_require__) {
 
-	"use strict";
+	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
 	    value: true
@@ -25430,38 +25437,20 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
+	var _ShortPost = __webpack_require__(221);
+
+	var _ShortPost2 = _interopRequireDefault(_ShortPost);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	var PostList = function PostList(_ref) {
 	    var posts = _ref.posts;
 
 	    return _react2.default.createElement(
-	        "ul",
-	        { className: "list-group" },
+	        'ul',
+	        { className: 'list-group' },
 	        posts.map(function (post, index) {
-	            return _react2.default.createElement(
-	                "div",
-	                { className: "post", key: index },
-	                _react2.default.createElement(
-	                    "h2",
-	                    null,
-	                    _react2.default.createElement(
-	                        "a",
-	                        { href: "#" },
-	                        post.title
-	                    )
-	                ),
-	                _react2.default.createElement(
-	                    "div",
-	                    { className: "date" },
-	                    post.date
-	                ),
-	                _react2.default.createElement(
-	                    "p",
-	                    null,
-	                    post.summary
-	                )
-	            );
+	            return _react2.default.createElement(_ShortPost2.default, { post: post, key: index });
 	        })
 	    );
 	};
@@ -25544,6 +25533,176 @@
 	}(_react2.default.Component);
 
 	exports.default = Navbar;
+
+/***/ },
+/* 216 */,
+/* 217 */,
+/* 218 */,
+/* 219 */,
+/* 220 */,
+/* 221 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _reactRouter = __webpack_require__(159);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var ShortPost = function ShortPost(_ref) {
+	    var post = _ref.post;
+
+	    return _react2.default.createElement(
+	        'div',
+	        { className: 'post' },
+	        _react2.default.createElement(
+	            'h2',
+	            null,
+	            _react2.default.createElement(
+	                _reactRouter.Link,
+	                { to: '/post/' + post.title },
+	                post.title
+	            )
+	        ),
+	        _react2.default.createElement(
+	            'div',
+	            { className: 'date' },
+	            post.date
+	        ),
+	        _react2.default.createElement(
+	            'p',
+	            null,
+	            post.summary
+	        )
+	    );
+	};
+
+	ShortPost.propTypes = {
+	    post: _react2.default.PropTypes.object.isRequired
+	};
+
+	exports.default = ShortPost;
+
+/***/ },
+/* 222 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _reactfire = __webpack_require__(210);
+
+	var _reactfire2 = _interopRequireDefault(_reactfire);
+
+	var _firebase = __webpack_require__(211);
+
+	var _firebase2 = _interopRequireDefault(_firebase);
+
+	var _reBase = __webpack_require__(212);
+
+	var _reBase2 = _interopRequireDefault(_reBase);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var base = _reBase2.default.createClass('https://nazaninblog.firebaseio.com/');
+
+	var Post = function (_React$Component) {
+	    _inherits(Post, _React$Component);
+
+	    function Post(props) {
+	        _classCallCheck(this, Post);
+
+	        var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(Post).call(this, props));
+
+	        _this.state = {
+	            postObj: {
+	                title: "",
+	                date: "",
+	                summary: ""
+	            }
+	        };
+	        return _this;
+	    }
+
+	    _createClass(Post, [{
+	        key: 'componentDidMount',
+	        value: function componentDidMount() {
+	            this.init(this.props.routeParams.postTitle);
+	        }
+	    }, {
+	        key: 'componentWillReceiveProps',
+	        value: function componentWillReceiveProps(nextProps) {
+	            this.init(nextProps.routeParams.postTitle);
+	        }
+	    }, {
+	        key: 'componentWillUnmount',
+	        value: function componentWillUnmount() {
+	            base.removeBinding(this.ref);
+	        }
+	    }, {
+	        key: 'init',
+	        value: function init(postTitle) {
+	            base.bindToState('posts/p1', {
+	                context: this,
+	                state: 'postObj'
+	            });
+	        }
+	    }, {
+	        key: 'render',
+	        value: function render() {
+	            return _react2.default.createElement(
+	                'div',
+	                { className: 'post' },
+	                _react2.default.createElement(
+	                    'h2',
+	                    null,
+	                    _react2.default.createElement(
+	                        'a',
+	                        { href: '#' },
+	                        this.state.postObj.title
+	                    )
+	                ),
+	                _react2.default.createElement(
+	                    'div',
+	                    { className: 'date' },
+	                    this.state.postObj.date
+	                ),
+	                _react2.default.createElement(
+	                    'p',
+	                    null,
+	                    this.state.postObj.summary
+	                )
+	            );
+	        }
+	    }]);
+
+	    return Post;
+	}(_react2.default.Component);
+
+	exports.default = Post;
 
 /***/ }
 /******/ ]);
