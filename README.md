@@ -1,6 +1,6 @@
 # reactBlog
 
-In development
+Under development
 
 #### Instructions
 

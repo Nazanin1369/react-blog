@@ -10,13 +10,7 @@ class Content extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            posts: [
-                {
-                   title: 'Two Weird Tricks with Redux',
-                   date:  'April 13, 2016',
-                   summary: 'I have now used Redux pretty extensively in multiple projects by now, especially the Firefox Developer Tools. While I think it breaks down in a few specific scenarios, generally I think it holds up well in complex apps. Certainly nothing is perfect, and the good news is when you want to do something outside of the normal workflow, it’s not hard.'
-                }
-            ]
+            posts: []
         }
     }
     componentDidMount() {
@@ -35,7 +29,6 @@ class Content extends React.Component {
             asArray: true,
             state: 'posts'
         });
-        console.log(this.state)
     }
     render() {
         return (
