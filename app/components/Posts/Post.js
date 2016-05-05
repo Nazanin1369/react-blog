@@ -25,7 +25,8 @@ class Post extends React.Component {
       base.removeBinding(this.ref);
     }
     init(postTitle) {
-        base.bindToState('posts/p1', {
+        postTitle = postTitle.replace(/\s+/g,"");
+        base.bindToState(`posts/${postTitle}`, {
             context: this,
             state: 'postObj'
         });

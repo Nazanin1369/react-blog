@@ -24013,7 +24013,7 @@
 	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
-	   value: true
+	    value: true
 	});
 
 	var _react = __webpack_require__(1);
@@ -24037,10 +24037,10 @@
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	exports.default = _react2.default.createElement(
-	   _reactRouter.Route,
-	   { path: '/', component: _Main2.default },
-	   _react2.default.createElement(_reactRouter.Route, { path: '/blog', component: _Content2.default }),
-	   _react2.default.createElement(_reactRouter.Route, { path: '/post/:postTitle', component: _Post2.default })
+	    _reactRouter.Route,
+	    { path: '/', component: _Main2.default },
+	    _react2.default.createElement(_reactRouter.Route, { path: '/blog', component: _Content2.default }),
+	    _react2.default.createElement(_reactRouter.Route, { path: '/post/:postTitle', component: _Post2.default })
 	);
 
 /***/ },
@@ -24207,13 +24207,9 @@
 	        key: 'render',
 	        value: function render() {
 	            return _react2.default.createElement(
-	                'div',
-	                { className: 'container' },
-	                _react2.default.createElement(
-	                    'section',
-	                    { className: 'posts' },
-	                    _react2.default.createElement(_PostList2.default, { posts: this.state.posts })
-	                )
+	                'section',
+	                { className: 'posts' },
+	                _react2.default.createElement(_PostList2.default, { posts: this.state.posts })
 	            );
 	        }
 	    }]);
@@ -25665,7 +25661,8 @@
 	    }, {
 	        key: 'init',
 	        value: function init(postTitle) {
-	            base.bindToState('posts/p1', {
+	            postTitle = postTitle.replace(/\s+/g, "");
+	            base.bindToState('posts/' + postTitle, {
 	                context: this,
 	                state: 'postObj'
 	            });

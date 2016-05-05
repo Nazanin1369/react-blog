@@ -37,6 +37,7 @@ body {
 .footer > .container {
   padding-right: 15px;
   padding-left: 15px;
+  font-size: 14px;
 }
 
 code {

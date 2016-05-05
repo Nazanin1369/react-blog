@@ -32,11 +32,9 @@ class Content extends React.Component {
     }
     render() {
         return (
-            <div className="container">
-               <section className="posts">
-                    <PostList posts={this.state.posts} />
-                </section>
-            </div>
+            <section className="posts">
+                <PostList posts={this.state.posts} />
+            </section>
         )
     }
 }
