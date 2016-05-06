@@ -34,7 +34,7 @@ class Post extends React.Component {
     render() {
          return (
             <div className="post">
-                <h2><a href="#">{this.state.postObj.title}</a></h2>
+                <h2><a>{this.state.postObj.title}</a></h2>
                 <div className="date">{this.state.postObj.date}</div>
                 <p>{this.state.postObj.summary}</p>
             </div>
