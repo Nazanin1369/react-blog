@@ -11,22 +11,22 @@ class Post extends React.Component {
             postObj: {
                 title: "",
                 date: "",
+                id: "",
                 summary: ""
             }
         }
     }
     componentDidMount() {
-       this.init(this.props.routeParams.postTitle);
+       this.init(this.props.routeParams.postId);
     }
     componentWillReceiveProps(nextProps) {
-        this.init(nextProps.routeParams.postTitle);
+        this.init(nextProps.routeParams.postId);
     }
     componentWillUnmount() {
       base.removeBinding(this.ref);
     }
-    init(postTitle) {
-        postTitle = postTitle.replace(/\s+/g,"");
-        base.bindToState(`posts/${postTitle}`, {
+    init(postId) {
+       this.ref =  base.bindToState(`posts/${postId}`, {
             context: this,
             state: 'postObj'
         });

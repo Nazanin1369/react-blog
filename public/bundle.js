@@ -24026,6 +24026,10 @@
 
 	var _Main2 = _interopRequireDefault(_Main);
 
+	var _NoMatch = __webpack_require__(223);
+
+	var _NoMatch2 = _interopRequireDefault(_NoMatch);
+
 	var _Content = __webpack_require__(209);
 
 	var _Content2 = _interopRequireDefault(_Content);
@@ -24037,10 +24041,15 @@
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	exports.default = _react2.default.createElement(
-	    _reactRouter.Route,
-	    { path: '/', component: _Main2.default },
-	    _react2.default.createElement(_reactRouter.Route, { path: '/blog', component: _Content2.default }),
-	    _react2.default.createElement(_reactRouter.Route, { path: '/post/:postTitle', component: _Post2.default })
+	    _reactRouter.Router,
+	    { history: _reactRouter.browserHistory },
+	    _react2.default.createElement(
+	        _reactRouter.Route,
+	        { path: '/', component: _Main2.default },
+	        _react2.default.createElement(_reactRouter.Route, { path: '/blog', component: _Content2.default }),
+	        _react2.default.createElement(_reactRouter.Route, { path: '/post/:postId', component: _Post2.default })
+	    ),
+	    _react2.default.createElement(_reactRouter.Route, { path: '*', component: _NoMatch2.default })
 	);
 
 /***/ },
@@ -24197,7 +24206,7 @@
 	    }, {
 	        key: 'init',
 	        value: function init() {
-	            base.bindToState('posts', {
+	            this.ref = base.bindToState('posts', {
 	                context: this,
 	                asArray: true,
 	                state: 'posts'
@@ -25564,7 +25573,7 @@
 	            null,
 	            _react2.default.createElement(
 	                _reactRouter.Link,
-	                { to: '/post/' + post.title },
+	                { to: '/post/' + post.id },
 	                post.title
 	            )
 	        ),
@@ -25637,6 +25646,7 @@
 	            postObj: {
 	                title: "",
 	                date: "",
+	                id: "",
 	                summary: ""
 	            }
 	        };
@@ -25646,12 +25656,12 @@
 	    _createClass(Post, [{
 	        key: 'componentDidMount',
 	        value: function componentDidMount() {
-	            this.init(this.props.routeParams.postTitle);
+	            this.init(this.props.routeParams.postId);
 	        }
 	    }, {
 	        key: 'componentWillReceiveProps',
 	        value: function componentWillReceiveProps(nextProps) {
-	            this.init(nextProps.routeParams.postTitle);
+	            this.init(nextProps.routeParams.postId);
 	        }
 	    }, {
 	        key: 'componentWillUnmount',
@@ -25660,9 +25670,8 @@
 	        }
 	    }, {
 	        key: 'init',
-	        value: function init(postTitle) {
-	            postTitle = postTitle.replace(/\s+/g, "");
-	            base.bindToState('posts/' + postTitle, {
+	        value: function init(postId) {
+	            this.ref = base.bindToState('posts/' + postId, {
 	                context: this,
 	                state: 'postObj'
 	            });
@@ -25700,6 +25709,35 @@
 	}(_react2.default.Component);
 
 	exports.default = Post;
+
+/***/ },
+/* 223 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var NoMatch = function NoMatch() {
+	    return _react2.default.createElement(
+	        "div",
+	        { className: "container" },
+	        _react2.default.createElement(
+	            "p",
+	            { className: "text-muted" },
+	            "404 Not found"
+	        )
+	    );
+	};
+	exports.default = NoMatch;
 
 /***/ }
 /******/ ]);

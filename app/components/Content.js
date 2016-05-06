@@ -24,7 +24,7 @@ class Content extends React.Component {
         base.removeBinding(this.ref);
     }
     init() {
-        base.bindToState('posts', {
+        this.ref = base.bindToState('posts', {
             context: this,
             asArray: true,
             state: 'posts'

@@ -1,12 +1,16 @@
 import React from 'react';
-import {Route, Router,  IndexRoute}  from 'react-router';
+import {Route, Router,  IndexRoute, browserHistory}  from 'react-router';
 import Main from '../components/Main';
+import NoMatch from '../components/NoMatch';
 import Content from '../components/Content';
 import Post from '../components/Posts/Post';
 
 export default(
-    <Route path="/" component={Main}>
-        <Route path="/blog" component={Content}/>
-        <Route path="/post/:postTitle" component={Post}/>
-    </Route>
+    <Router history={browserHistory}>
+        <Route path="/" component={Main}>
+            <Route path="/blog" component={Content}/>
+            <Route path="/post/:postId" component={Post}/>
+        </Route>
+        <Route path="*" component={NoMatch}/>
+    </Router>
 );
