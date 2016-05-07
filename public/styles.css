@@ -121,3 +121,19 @@ code {
 .RichEditor-activeButton {
   color: #5890ff;
 }
+
+
+/** Edit form */
+.btn-publish {
+    float: right;
+    width: 200px;
+}
+
+.btn-discard {
+    float: left;
+    width: 200px;
+}
+
+.editForm > input {
+    margin-bottom: 20px;
+}

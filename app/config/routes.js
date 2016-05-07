@@ -11,7 +11,7 @@ export default(
         <Route path="/" component={Main}>
             <Route path="/blog" component={Content}/>
             <Route path="/post/:postId" component={Post}/>
-            <Route path="/editPost" component={PostEditor}/>
+            <Route path="/edit" component={PostEditor}/>
         </Route>
         <Route path="*" component={NoMatch}/>
     </Router>
