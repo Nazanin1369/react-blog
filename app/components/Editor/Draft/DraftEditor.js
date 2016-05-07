@@ -1,6 +1,6 @@
 import React from 'react';
 import Immutable from 'immutable';
-import {Editor, EditorState, RichUtils, DefaultDraftBlockRenderMap} from 'draft-js';
+import {Editor, EditorState, RichUtils, DefaultDraftBlockRenderMap, convertToRaw} from 'draft-js';
 import BlockStyleControls from './BlockStyleControls';
 import InlineStyleControls from './InlineStyleControls';
 
@@ -15,13 +15,13 @@ class DraftEditor extends React.Component {
 
         this.focus = () => this.refs.editor.focus();
         this.onChange = (editorState) => {
-            console.log('*', editorState.getCurrentContent())
             this.setState({editorState});
         }
 
         this.handleKeyCommand = (command) => this._handleKeyCommand(command);
         this.toggleBlockType = (type) => this._toggleBlockType(type);
         this.toggleInlineStyle = (style) => this._toggleInlineStyle(style);
+        this.logState = () => console.log(this.state.editorState);
     }
 
     _handleKeyCommand(command) {
@@ -86,7 +86,13 @@ class DraftEditor extends React.Component {
                 ref="editor"
                 spellCheck={true}
             />
+            <input
+                onClick={this.logState}
+                type="button"
+                value="Log State"
+              />
             </div>
+
         </div>
         );
     }

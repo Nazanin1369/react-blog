@@ -2,6 +2,7 @@ import React from 'react';
 import {Editor, EditorState} from 'draft-js';
 import DraftEditor from './Draft/DraftEditor';
 import RteEditor from './Rte/RteEditor';
+import QuilEditor from './Quil/QuilEditor';
 
 class PostEditor extends React.Component {
     getTitleRef(ref) {
@@ -24,7 +25,7 @@ class PostEditor extends React.Component {
                                 <h5>Date:</h5>
                                 <input type="text" className="form-control" placeholder="date" ref={(ref) => this.getDateRef(ref)}/>
                                 <h5>Body:</h5>
-                                <DraftEditor />
+                                <QuilEditor />
                                 <br/>
                                 <button className="btn btn-primary btn-discard">Discard</button>
                                 <button type="submit" className="btn btn-primary btn-publish">Publish</button>

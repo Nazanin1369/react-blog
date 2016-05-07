@@ -13,6 +13,7 @@ module.exports = {
                     presets: ['react', 'es2015']
                 }
             }
-        ]
+        ],
+        noParse: /node_modules\/quill\/dist/
     }
 }
