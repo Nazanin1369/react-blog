@@ -1,6 +1,7 @@
 # reactBlog
 
-Under development
+My personal Blog development with React.
+'This repository is under development'
 
 #### Instructions
 
@@ -9,8 +10,7 @@ npm install
 webpack -w
 ```
 
-
-#### Used framework and tools
+#### Frameworks and tools
 
 * React
 * ReactDOM
@@ -19,5 +19,5 @@ webpack -w
 * Rebase
 * Firebase
 * Webpack
-* Axios
+* React-Quill editor
 
