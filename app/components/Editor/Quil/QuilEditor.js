@@ -2,26 +2,34 @@ import React from 'react';
 import ReactQuill from 'react-quill';
 
 class QuilEditor extends React.Component {
-
     constructor(props) {
         super(props);
-        const that = this;
         this.state = {
             text: ''
         }
     }
 
     onTextChange(value) {
-        console.log(value)
-        that.state.text = value;
+        this.setState({text: value});
     }
 
     render() {
     return (
-      <ReactQuill
-        theme='snow'
-        value={this.state.text}
-        onChange={this.onTextChange} />
+        <div>
+            <div className="col-xs-6">
+                <ReactQuill
+                    theme='snow'
+                    value={this.state.text}
+                    onChange={this.onTextChange.bind(this)} />
+            </div>
+            <div className="col-xs-6">
+                <pre className="preview language-markup">
+                    <code className=" language-markup" >
+                        {this.state.text}
+                    </code>
+                </pre>
+            </div>
+       </div>
     );
   }
 }
