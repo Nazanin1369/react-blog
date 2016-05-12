@@ -1,17 +1,46 @@
 import React from 'react';
 import {Editor, EditorState} from 'draft-js';
+import ReactfireMixin from 'reactfire';
+import Firebase from 'firebase';
+import Rebase from 're-base'
 import DraftEditor from './Draft/DraftEditor';
 import QuilEditor from './Quil/QuilEditor';
 
+const base = Rebase.createClass('https://nazaninblog.firebaseio.com/')
+
 class PostEditor extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            post: {
+                date: '',
+                title: '',
+                summary: '',
+                id: ''
+            }
+        }
+    }
     getTitleRef(ref) {
-        this.postTitleRef = ref;
+        this.state.post.title = ref;
     }
     getDateRef(ref) {
-        this.postDateRef = ref;
+        this.state.post.date = ref;
     }
     getSummaryRef(ref) {
-        this.postSummaryRef = ref;
+        this.state.post.summary = ref;
+    }
+    handleSumbit() {
+        console.log('submitting');
+        var newNote = {};
+        newNote.date = this.postDateRef;
+        newNote.title = this.postTitleRef;
+        newNote.summary = this.postSummaryRef;
+
+    }
+     handleAddPost(newNote) {
+       /* base.post(this.props.params.username, {
+            data: this.state.notes.concat([newNote])
+        });*/
     }
     render() {
         return (
@@ -21,7 +50,7 @@ class PostEditor extends React.Component {
                             <h3 className="panel-title">Write a new Post</h3>
                         </div>
                         <div className="panel-body">
-                            <form className="editForm">
+                            <form className="editForm" onSubmit={() => this.handleSumbit()}>
                                 <h5>Title:</h5>
                                 <input type="text" className="form-control" placeholder="title" ref={(ref) => this.getTitleRef(ref)}/>
                                 <h5>Date:</h5>

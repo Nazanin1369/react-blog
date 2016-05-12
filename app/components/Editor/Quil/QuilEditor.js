@@ -8,11 +8,9 @@ class QuilEditor extends React.Component {
             text: ''
         }
     }
-
     onTextChange(value) {
         this.setState({text: value});
     }
-
     render() {
     return (
         <div>

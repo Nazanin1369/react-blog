@@ -24220,6 +24220,7 @@
 	    }, {
 	        key: 'render',
 	        value: function render() {
+	            console.log(this.state.posts);
 	            return _react2.default.createElement(
 	                'section',
 	                { className: 'posts' },
@@ -25757,6 +25758,18 @@
 
 	var _draftJs = __webpack_require__(220);
 
+	var _reactfire = __webpack_require__(210);
+
+	var _reactfire2 = _interopRequireDefault(_reactfire);
+
+	var _firebase = __webpack_require__(211);
+
+	var _firebase2 = _interopRequireDefault(_firebase);
+
+	var _reBase = __webpack_require__(212);
+
+	var _reBase2 = _interopRequireDefault(_reBase);
+
 	var _DraftEditor = __webpack_require__(358);
 
 	var _DraftEditor2 = _interopRequireDefault(_DraftEditor);
@@ -25773,29 +25786,57 @@
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
+	var base = _reBase2.default.createClass('https://nazaninblog.firebaseio.com/');
+
 	var PostEditor = function (_React$Component) {
 	    _inherits(PostEditor, _React$Component);
 
-	    function PostEditor() {
+	    function PostEditor(props) {
 	        _classCallCheck(this, PostEditor);
 
-	        return _possibleConstructorReturn(this, Object.getPrototypeOf(PostEditor).apply(this, arguments));
+	        var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(PostEditor).call(this, props));
+
+	        _this.state = {
+	            post: {
+	                date: '',
+	                title: '',
+	                summary: '',
+	                id: ''
+	            }
+	        };
+	        return _this;
 	    }
 
 	    _createClass(PostEditor, [{
 	        key: 'getTitleRef',
 	        value: function getTitleRef(ref) {
-	            this.postTitleRef = ref;
+	            this.state.post.title = ref;
 	        }
 	    }, {
 	        key: 'getDateRef',
 	        value: function getDateRef(ref) {
-	            this.postDateRef = ref;
+	            this.state.post.date = ref;
 	        }
 	    }, {
 	        key: 'getSummaryRef',
 	        value: function getSummaryRef(ref) {
-	            this.postSummaryRef = ref;
+	            this.state.post.summary = ref;
+	        }
+	    }, {
+	        key: 'handleSumbit',
+	        value: function handleSumbit() {
+	            console.log('submitting');
+	            var newNote = {};
+	            newNote.date = this.postDateRef;
+	            newNote.title = this.postTitleRef;
+	            newNote.summary = this.postSummaryRef;
+	        }
+	    }, {
+	        key: 'handleAddPost',
+	        value: function handleAddPost(newNote) {
+	            /* base.post(this.props.params.username, {
+	                 data: this.state.notes.concat([newNote])
+	             });*/
 	        }
 	    }, {
 	        key: 'render',
@@ -25822,7 +25863,9 @@
 	                        { className: 'panel-body' },
 	                        _react2.default.createElement(
 	                            'form',
-	                            { className: 'editForm' },
+	                            { className: 'editForm', onSubmit: function onSubmit() {
+	                                    return _this2.handleSumbit();
+	                                } },
 	                            _react2.default.createElement(
 	                                'h5',
 	                                null,

@@ -29,8 +29,10 @@ class Content extends React.Component {
             asArray: true,
             state: 'posts'
         });
+
     }
     render() {
+        console.log(this.state.posts)
         return (
             <section className="posts">
                 <PostList posts={this.state.posts} />
