@@ -24030,7 +24030,7 @@
 
 	var _NoMatch2 = _interopRequireDefault(_NoMatch);
 
-	var _Content = __webpack_require__(209);
+	var _Content = __webpack_require__(213);
 
 	var _Content2 = _interopRequireDefault(_Content);
 
@@ -24067,106 +24067,35 @@
 	    value: true
 	});
 
-	var _react = __webpack_require__(1);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	var _Footer = __webpack_require__(208);
-
-	var _Footer2 = _interopRequireDefault(_Footer);
-
-	var _Content = __webpack_require__(209);
-
-	var _Content2 = _interopRequireDefault(_Content);
-
-	var _Navbar = __webpack_require__(216);
-
-	var _Navbar2 = _interopRequireDefault(_Navbar);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	var Main = function Main(_ref) {
-	    var children = _ref.children;
-
-	    return _react2.default.createElement(
-	        'div',
-	        { className: 'main-container' },
-	        _react2.default.createElement(_Navbar2.default, null),
-	        _react2.default.createElement(
-	            'div',
-	            { className: 'container' },
-	            children
-	        ),
-	        _react2.default.createElement(_Footer2.default, null)
-	    );
-	};
-
-	exports.default = Main;
-
-/***/ },
-/* 208 */
-/***/ function(module, exports, __webpack_require__) {
-
-	"use strict";
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-
-	var _react = __webpack_require__(1);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	var Footer = function Footer() {
-	  return _react2.default.createElement(
-	    "footer",
-	    { className: "footer" },
-	    _react2.default.createElement(
-	      "div",
-	      { className: "container" },
-	      _react2.default.createElement(
-	        "p",
-	        { className: "text-muted" },
-	        "Copy Right 2016 - Nazanin Delam"
-	      )
-	    )
-	  );
-	};
-	exports.default = Footer;
-
-/***/ },
-/* 209 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
-
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 	var _react = __webpack_require__(1);
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _reactfire = __webpack_require__(210);
+	var _reactfire = __webpack_require__(208);
 
 	var _reactfire2 = _interopRequireDefault(_reactfire);
 
-	var _firebase = __webpack_require__(211);
+	var _firebase = __webpack_require__(209);
 
 	var _firebase2 = _interopRequireDefault(_firebase);
 
-	var _reBase = __webpack_require__(212);
+	var _reBase = __webpack_require__(210);
 
 	var _reBase2 = _interopRequireDefault(_reBase);
 
-	var _PostList = __webpack_require__(214);
+	var _Footer = __webpack_require__(212);
 
-	var _PostList2 = _interopRequireDefault(_PostList);
+	var _Footer2 = _interopRequireDefault(_Footer);
+
+	var _Content = __webpack_require__(213);
+
+	var _Content2 = _interopRequireDefault(_Content);
+
+	var _Navbar = __webpack_require__(216);
+
+	var _Navbar2 = _interopRequireDefault(_Navbar);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -24178,13 +24107,13 @@
 
 	var base = _reBase2.default.createClass('https://nazaninblog.firebaseio.com/');
 
-	var Content = function (_React$Component) {
-	    _inherits(Content, _React$Component);
+	var Main = function (_React$Component) {
+	    _inherits(Main, _React$Component);
 
-	    function Content(props) {
-	        _classCallCheck(this, Content);
+	    function Main(props) {
+	        _classCallCheck(this, Main);
 
-	        var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(Content).call(this, props));
+	        var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(Main).call(this, props));
 
 	        _this.state = {
 	            posts: []
@@ -24192,7 +24121,7 @@
 	        return _this;
 	    }
 
-	    _createClass(Content, [{
+	    _createClass(Main, [{
 	        key: 'componentDidMount',
 	        value: function componentDidMount() {
 	            this.init();
@@ -24220,22 +24149,28 @@
 	    }, {
 	        key: 'render',
 	        value: function render() {
-	            console.log(this.state.posts);
+	            console.log(this.state);
 	            return _react2.default.createElement(
-	                'section',
-	                { className: 'posts' },
-	                _react2.default.createElement(_PostList2.default, { posts: this.state.posts })
+	                'div',
+	                { className: 'main-container' },
+	                _react2.default.createElement(_Navbar2.default, null),
+	                _react2.default.createElement(
+	                    'div',
+	                    { className: 'container', posts: this.state.posts },
+	                    this.props.children
+	                ),
+	                _react2.default.createElement(_Footer2.default, null)
 	            );
 	        }
 	    }]);
 
-	    return Content;
+	    return Main;
 	}(_react2.default.Component);
 
-	exports.default = Content;
+	exports.default = Main;
 
 /***/ },
-/* 210 */
+/* 208 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
@@ -24606,7 +24541,7 @@
 
 
 /***/ },
-/* 211 */
+/* 209 */
 /***/ function(module, exports) {
 
 	/*! @license Firebase v2.4.2
@@ -24892,20 +24827,20 @@
 
 
 /***/ },
-/* 212 */
+/* 210 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__(213);
+	module.exports = __webpack_require__(211);
 
 
 
 /***/ },
-/* 213 */
+/* 211 */
 /***/ function(module, exports, __webpack_require__) {
 
 	(function webpackUniversalModuleDefinition(root, factory) {
 		if(true)
-			module.exports = factory(__webpack_require__(211));
+			module.exports = factory(__webpack_require__(209));
 		else if(typeof define === 'function' && define.amd)
 			define(["firebase"], factory);
 		else {
@@ -25435,6 +25370,72 @@
 	;
 
 /***/ },
+/* 212 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var Footer = function Footer() {
+	  return _react2.default.createElement(
+	    "footer",
+	    { className: "footer" },
+	    _react2.default.createElement(
+	      "div",
+	      { className: "container" },
+	      _react2.default.createElement(
+	        "p",
+	        { className: "text-muted" },
+	        "Copy Right 2016 - Nazanin Delam"
+	      )
+	    )
+	  );
+	};
+	exports.default = Footer;
+
+/***/ },
+/* 213 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _PostList = __webpack_require__(214);
+
+	var _PostList2 = _interopRequireDefault(_PostList);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var Content = function Content(_ref) {
+	    var posts = _ref.posts;
+
+	    console.log(posts);
+	    return _react2.default.createElement(
+	        'section',
+	        { className: 'posts' },
+	        _react2.default.createElement(_PostList2.default, { posts: posts })
+	    );
+	};
+
+	exports.default = Content;
+
+/***/ },
 /* 214 */
 /***/ function(module, exports, __webpack_require__) {
 
@@ -25457,6 +25458,7 @@
 	var PostList = function PostList(_ref) {
 	    var posts = _ref.posts;
 
+	    console.log(posts);
 	    return _react2.default.createElement(
 	        'ul',
 	        { className: 'list-group' },
@@ -25464,10 +25466,6 @@
 	            return _react2.default.createElement(_ShortPost2.default, { post: post, key: index });
 	        })
 	    );
-	};
-
-	PostList.propTypes = {
-	    posts: _react2.default.PropTypes.array.isRequired
 	};
 
 	exports.default = PostList;
@@ -25642,15 +25640,15 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _reactfire = __webpack_require__(210);
+	var _reactfire = __webpack_require__(208);
 
 	var _reactfire2 = _interopRequireDefault(_reactfire);
 
-	var _firebase = __webpack_require__(211);
+	var _firebase = __webpack_require__(209);
 
 	var _firebase2 = _interopRequireDefault(_firebase);
 
-	var _reBase = __webpack_require__(212);
+	var _reBase = __webpack_require__(210);
 
 	var _reBase2 = _interopRequireDefault(_reBase);
 
@@ -25758,15 +25756,15 @@
 
 	var _draftJs = __webpack_require__(220);
 
-	var _reactfire = __webpack_require__(210);
+	var _reactfire = __webpack_require__(208);
 
 	var _reactfire2 = _interopRequireDefault(_reactfire);
 
-	var _firebase = __webpack_require__(211);
+	var _firebase = __webpack_require__(209);
 
 	var _firebase2 = _interopRequireDefault(_firebase);
 
-	var _reBase = __webpack_require__(212);
+	var _reBase = __webpack_require__(210);
 
 	var _reBase2 = _interopRequireDefault(_reBase);
 
@@ -25834,9 +25832,9 @@
 	    }, {
 	        key: 'handleAddPost',
 	        value: function handleAddPost(newNote) {
-	            /* base.post(this.props.params.username, {
-	                 data: this.state.notes.concat([newNote])
-	             });*/
+	            base.post('posts', {
+	                data: this.state.notes.concat([newNote])
+	            });
 	        }
 	    }, {
 	        key: 'render',

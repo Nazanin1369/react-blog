@@ -37,10 +37,10 @@ class PostEditor extends React.Component {
         newNote.summary = this.postSummaryRef;
 
     }
-     handleAddPost(newNote) {
-       /* base.post(this.props.params.username, {
-            data: this.state.notes.concat([newNote])
-        });*/
+    handleAddPost(newNote) {
+       base.post('posts', {
+           data: this.state.notes.concat([newNote])
+      });
     }
     render() {
         return (
