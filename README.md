@@ -3,7 +3,7 @@
 My personal Blog development with React.
 'This repository is under development'
 
-#### Instructions
+#### Build
 
 ```bash
 npm install
