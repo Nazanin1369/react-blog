@@ -24,7 +24,6 @@ body {
   width: 100%;
   /* Set the fixed height of the footer here */
   height: 60px;
-  background-image: url('./images/back.jpg');
 }
 
 
@@ -51,11 +50,22 @@ code {
 
 .my-nav {
    background-image: url('./images/back.jpg');
+   height: 180px;
 }
 
 .navbar-brand {
     font-weight: 500;
     color: #fff !important;
+    left: 203px;
+    top: 115px;
+    position: relative;
+}
+
+.img-circle {
+    border-radius: 50%;
+    height: 160px;
+    margin-top: 9px;
+    background-image: url('./images/me.jpg')
 }
 
 

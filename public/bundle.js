@@ -24220,7 +24220,6 @@
 	    }, {
 	        key: 'render',
 	        value: function render() {
-	            console.log(this.state.posts);
 	            return _react2.default.createElement(
 	                'section',
 	                { className: 'posts' },
@@ -25457,7 +25456,6 @@
 	var PostList = function PostList(_ref) {
 	    var posts = _ref.posts;
 
-	    console.log(posts);
 	    return _react2.default.createElement(
 	        'ul',
 	        { className: 'list-group' },
@@ -25582,7 +25580,8 @@
 	                            "a",
 	                            { className: "navbar-brand", href: "#" },
 	                            "Nazanin De's Blog"
-	                        )
+	                        ),
+	                        _react2.default.createElement("div", { className: "img-circle" })
 	                    )
 	                )
 	            );
@@ -25833,10 +25832,8 @@
 	    }, {
 	        key: 'handleSumbit',
 	        value: function handleSumbit() {
-	            console.log('submitting');
 	            var newNote = {};
 	            newNote.id = this.state.post.title.value.replace(/\s+/g, '');
-	            console.log(newNote.id);
 	            newNote.date = new Date(this.state.post.date.value.trim()).toDateString();
 	            newNote.title = this.state.post.title.value;
 	            newNote.summary = this.state.post.summary.value;
