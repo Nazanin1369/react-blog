@@ -5,6 +5,7 @@ import Firebase from 'firebase';
 import Rebase from 're-base'
 import DraftEditor from './Draft/DraftEditor';
 import QuilEditor from './Quil/QuilEditor';
+import Router from 'react-router';
 
 const base = Rebase.createClass('https://nazaninblog.firebaseio.com/')
 
@@ -16,7 +17,8 @@ class PostEditor extends React.Component {
                 date: '',
                 title: '',
                 summary: '',
-                id: ''
+                id: '',
+                content: ''
             }
         }
     }
@@ -29,18 +31,26 @@ class PostEditor extends React.Component {
     getSummaryRef(ref) {
         this.state.post.summary = ref;
     }
-    handleSumbit() {
-        console.log('submitting');
-        var newNote = {};
-        newNote.date = this.postDateRef;
-        newNote.title = this.postTitleRef;
-        newNote.summary = this.postSummaryRef;
 
+    getContentRef(ref) {
+        this.state.post.content = ref;
     }
-    handleAddPost(newNote) {
-       base.post('posts', {
-           data: this.state.notes.concat([newNote])
-      });
+
+    handleSumbit() {
+        var newNote = {};
+        newNote.id = (this.state.post.title.value).replace(/\s+/g, '');
+        newNote.date = new Date(this.state.post.date.value.trim()).toDateString();
+        newNote.title = this.state.post.title.value;
+        newNote.summary = this.state.post.summary.value;
+        newNote.content = this.state.post.content;
+        console.log(newNote, this.state)
+        base.post(`posts/${newNote.id}`, {
+            data: newNote,
+        then(){
+            console.log('done')
+        }
+    });
+
     }
     render() {
         return (
@@ -58,7 +68,7 @@ class PostEditor extends React.Component {
                                 <h5>Summary:</h5>
                                 <input type="text" className="form-control" placeholder="summary..." ref={(ref) => this.getSummaryRef(ref)}/>
                                 <h5>Body:</h5>
-                                <QuilEditor />
+                                <QuilEditor setContent={(ref) => this.getContentRef(ref)}/>
                                 <br/>
                                 <button className="btn btn-primary btn-discard">Discard</button>
                                 <button type="submit" className="btn btn-primary btn-publish">Publish</button>

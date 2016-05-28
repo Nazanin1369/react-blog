@@ -24030,7 +24030,7 @@
 
 	var _NoMatch2 = _interopRequireDefault(_NoMatch);
 
-	var _Content = __webpack_require__(213);
+	var _Content = __webpack_require__(209);
 
 	var _Content2 = _interopRequireDefault(_Content);
 
@@ -24067,35 +24067,106 @@
 	    value: true
 	});
 
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
 	var _react = __webpack_require__(1);
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _reactfire = __webpack_require__(208);
-
-	var _reactfire2 = _interopRequireDefault(_reactfire);
-
-	var _firebase = __webpack_require__(209);
-
-	var _firebase2 = _interopRequireDefault(_firebase);
-
-	var _reBase = __webpack_require__(210);
-
-	var _reBase2 = _interopRequireDefault(_reBase);
-
-	var _Footer = __webpack_require__(212);
+	var _Footer = __webpack_require__(208);
 
 	var _Footer2 = _interopRequireDefault(_Footer);
 
-	var _Content = __webpack_require__(213);
+	var _Content = __webpack_require__(209);
 
 	var _Content2 = _interopRequireDefault(_Content);
 
 	var _Navbar = __webpack_require__(216);
 
 	var _Navbar2 = _interopRequireDefault(_Navbar);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var Main = function Main(_ref) {
+	    var children = _ref.children;
+
+	    return _react2.default.createElement(
+	        'div',
+	        { className: 'main-container' },
+	        _react2.default.createElement(_Navbar2.default, null),
+	        _react2.default.createElement(
+	            'div',
+	            { className: 'container' },
+	            children
+	        ),
+	        _react2.default.createElement(_Footer2.default, null)
+	    );
+	};
+
+	exports.default = Main;
+
+/***/ },
+/* 208 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	var Footer = function Footer() {
+	  return _react2.default.createElement(
+	    "footer",
+	    { className: "footer" },
+	    _react2.default.createElement(
+	      "div",
+	      { className: "container" },
+	      _react2.default.createElement(
+	        "p",
+	        { className: "text-muted" },
+	        "Copy Right 2016 - Nazanin Delam"
+	      )
+	    )
+	  );
+	};
+	exports.default = Footer;
+
+/***/ },
+/* 209 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(1);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _reactfire = __webpack_require__(210);
+
+	var _reactfire2 = _interopRequireDefault(_reactfire);
+
+	var _firebase = __webpack_require__(211);
+
+	var _firebase2 = _interopRequireDefault(_firebase);
+
+	var _reBase = __webpack_require__(212);
+
+	var _reBase2 = _interopRequireDefault(_reBase);
+
+	var _PostList = __webpack_require__(214);
+
+	var _PostList2 = _interopRequireDefault(_PostList);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -24107,13 +24178,13 @@
 
 	var base = _reBase2.default.createClass('https://nazaninblog.firebaseio.com/');
 
-	var Main = function (_React$Component) {
-	    _inherits(Main, _React$Component);
+	var Content = function (_React$Component) {
+	    _inherits(Content, _React$Component);
 
-	    function Main(props) {
-	        _classCallCheck(this, Main);
+	    function Content(props) {
+	        _classCallCheck(this, Content);
 
-	        var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(Main).call(this, props));
+	        var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(Content).call(this, props));
 
 	        _this.state = {
 	            posts: []
@@ -24121,7 +24192,7 @@
 	        return _this;
 	    }
 
-	    _createClass(Main, [{
+	    _createClass(Content, [{
 	        key: 'componentDidMount',
 	        value: function componentDidMount() {
 	            this.init();
@@ -24149,28 +24220,22 @@
 	    }, {
 	        key: 'render',
 	        value: function render() {
-	            console.log(this.state);
+	            console.log(this.state.posts);
 	            return _react2.default.createElement(
-	                'div',
-	                { className: 'main-container' },
-	                _react2.default.createElement(_Navbar2.default, null),
-	                _react2.default.createElement(
-	                    'div',
-	                    { className: 'container', posts: this.state.posts },
-	                    this.props.children
-	                ),
-	                _react2.default.createElement(_Footer2.default, null)
+	                'section',
+	                { className: 'posts' },
+	                _react2.default.createElement(_PostList2.default, { posts: this.state.posts })
 	            );
 	        }
 	    }]);
 
-	    return Main;
+	    return Content;
 	}(_react2.default.Component);
 
-	exports.default = Main;
+	exports.default = Content;
 
 /***/ },
-/* 208 */
+/* 210 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
@@ -24541,7 +24606,7 @@
 
 
 /***/ },
-/* 209 */
+/* 211 */
 /***/ function(module, exports) {
 
 	/*! @license Firebase v2.4.2
@@ -24827,20 +24892,20 @@
 
 
 /***/ },
-/* 210 */
+/* 212 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__(211);
+	module.exports = __webpack_require__(213);
 
 
 
 /***/ },
-/* 211 */
+/* 213 */
 /***/ function(module, exports, __webpack_require__) {
 
 	(function webpackUniversalModuleDefinition(root, factory) {
 		if(true)
-			module.exports = factory(__webpack_require__(209));
+			module.exports = factory(__webpack_require__(211));
 		else if(typeof define === 'function' && define.amd)
 			define(["firebase"], factory);
 		else {
@@ -25370,72 +25435,6 @@
 	;
 
 /***/ },
-/* 212 */
-/***/ function(module, exports, __webpack_require__) {
-
-	"use strict";
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-
-	var _react = __webpack_require__(1);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	var Footer = function Footer() {
-	  return _react2.default.createElement(
-	    "footer",
-	    { className: "footer" },
-	    _react2.default.createElement(
-	      "div",
-	      { className: "container" },
-	      _react2.default.createElement(
-	        "p",
-	        { className: "text-muted" },
-	        "Copy Right 2016 - Nazanin Delam"
-	      )
-	    )
-	  );
-	};
-	exports.default = Footer;
-
-/***/ },
-/* 213 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
-
-	var _react = __webpack_require__(1);
-
-	var _react2 = _interopRequireDefault(_react);
-
-	var _PostList = __webpack_require__(214);
-
-	var _PostList2 = _interopRequireDefault(_PostList);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	var Content = function Content(_ref) {
-	    var posts = _ref.posts;
-
-	    console.log(posts);
-	    return _react2.default.createElement(
-	        'section',
-	        { className: 'posts' },
-	        _react2.default.createElement(_PostList2.default, { posts: posts })
-	    );
-	};
-
-	exports.default = Content;
-
-/***/ },
 /* 214 */
 /***/ function(module, exports, __webpack_require__) {
 
@@ -25618,7 +25617,7 @@
 	        _react2.default.createElement(
 	            "p",
 	            { className: "text-muted" },
-	            "404 Not found"
+	            "Page does not exist"
 	        )
 	    );
 	};
@@ -25640,15 +25639,15 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _reactfire = __webpack_require__(208);
+	var _reactfire = __webpack_require__(210);
 
 	var _reactfire2 = _interopRequireDefault(_reactfire);
 
-	var _firebase = __webpack_require__(209);
+	var _firebase = __webpack_require__(211);
 
 	var _firebase2 = _interopRequireDefault(_firebase);
 
-	var _reBase = __webpack_require__(210);
+	var _reBase = __webpack_require__(212);
 
 	var _reBase2 = _interopRequireDefault(_reBase);
 
@@ -25728,7 +25727,8 @@
 	                    'p',
 	                    null,
 	                    this.state.postObj.summary
-	                )
+	                ),
+	                _react2.default.createElement('div', { className: 'post_content', dangerouslySetInnerHTML: { __html: this.state.postObj.content } })
 	            );
 	        }
 	    }]);
@@ -25756,15 +25756,15 @@
 
 	var _draftJs = __webpack_require__(220);
 
-	var _reactfire = __webpack_require__(208);
+	var _reactfire = __webpack_require__(210);
 
 	var _reactfire2 = _interopRequireDefault(_reactfire);
 
-	var _firebase = __webpack_require__(209);
+	var _firebase = __webpack_require__(211);
 
 	var _firebase2 = _interopRequireDefault(_firebase);
 
-	var _reBase = __webpack_require__(210);
+	var _reBase = __webpack_require__(212);
 
 	var _reBase2 = _interopRequireDefault(_reBase);
 
@@ -25775,6 +25775,10 @@
 	var _QuilEditor = __webpack_require__(362);
 
 	var _QuilEditor2 = _interopRequireDefault(_QuilEditor);
+
+	var _reactRouter = __webpack_require__(159);
+
+	var _reactRouter2 = _interopRequireDefault(_reactRouter);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -25799,7 +25803,8 @@
 	                date: '',
 	                title: '',
 	                summary: '',
-	                id: ''
+	                id: '',
+	                content: ''
 	            }
 	        };
 	        return _this;
@@ -25821,19 +25826,27 @@
 	            this.state.post.summary = ref;
 	        }
 	    }, {
+	        key: 'getContentRef',
+	        value: function getContentRef(ref) {
+	            this.state.post.content = ref;
+	        }
+	    }, {
 	        key: 'handleSumbit',
 	        value: function handleSumbit() {
 	            console.log('submitting');
 	            var newNote = {};
-	            newNote.date = this.postDateRef;
-	            newNote.title = this.postTitleRef;
-	            newNote.summary = this.postSummaryRef;
-	        }
-	    }, {
-	        key: 'handleAddPost',
-	        value: function handleAddPost(newNote) {
-	            base.post('posts', {
-	                data: this.state.notes.concat([newNote])
+	            newNote.id = this.state.post.title.value.replace(/\s+/g, '');
+	            console.log(newNote.id);
+	            newNote.date = new Date(this.state.post.date.value.trim()).toDateString();
+	            newNote.title = this.state.post.title.value;
+	            newNote.summary = this.state.post.summary.value;
+	            newNote.content = this.state.post.content;
+	            console.log(newNote, this.state);
+	            base.post('posts/' + newNote.id, {
+	                data: newNote,
+	                then: function then() {
+	                    console.log('done');
+	                }
 	            });
 	        }
 	    }, {
@@ -25893,7 +25906,9 @@
 	                                null,
 	                                'Body:'
 	                            ),
-	                            _react2.default.createElement(_QuilEditor2.default, null),
+	                            _react2.default.createElement(_QuilEditor2.default, { setContent: function setContent(ref) {
+	                                    return _this2.getContentRef(ref);
+	                                } }),
 	                            _react2.default.createElement('br', null),
 	                            _react2.default.createElement(
 	                                'button',
@@ -44190,6 +44205,7 @@
 	        key: 'onTextChange',
 	        value: function onTextChange(value) {
 	            this.setState({ text: value });
+	            this.props.setContent(value);
 	        }
 	    }, {
 	        key: 'render',

@@ -2,7 +2,6 @@ import React from 'react';
 import ShortPost from './ShortPost';
 
 const PostList = ({ posts }) => {
-    console.log(posts)
      return (
 
             <ul className="list-group" >

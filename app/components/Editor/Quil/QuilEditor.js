@@ -10,6 +10,8 @@ class QuilEditor extends React.Component {
     }
     onTextChange(value) {
         this.setState({text: value});
+        this.props.setContent(value);
+
     }
     render() {
     return (

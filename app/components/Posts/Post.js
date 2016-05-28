@@ -37,6 +37,8 @@ class Post extends React.Component {
                 <h2><a>{this.state.postObj.title}</a></h2>
                 <div className="date">{this.state.postObj.date}</div>
                 <p>{this.state.postObj.summary}</p>
+                <div className="post_content" dangerouslySetInnerHTML={{__html: this.state.postObj.content}}>
+                </div>
             </div>
         )
     }

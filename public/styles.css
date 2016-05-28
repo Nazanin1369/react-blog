@@ -11,11 +11,11 @@ body {
     font-family: palatino, georgia, serif;
     font-size: 20px;
     background-color: #fcfcfc;
-    /* color: #272727;*/
-    color: #fff;
+    color: #272727;
+    /*color: #fff;*/
     line-height: 1.5em;
     /** background-color: #232a35; */
-    background-color: black;
+    /** background-color: black;*/
 }
 
 .footer {
