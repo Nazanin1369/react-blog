@@ -6,14 +6,33 @@ class Navbar extends React.Component {
             <nav className="navbar navbar-default navbar-fixed-top my-nav">
                 <div className="container">
                     <div className="navbar-header">
-                        <button type="button" className="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                            <span className="sr-only">Toggle navigation</span>
-                            <span className="icon-bar"></span>
-                            <span className="icon-bar"></span>
-                            <span className="icon-bar"></span>
-                        </button>
-                        <a className="navbar-brand" href="#">Nazanin De's Blog</a>
-                        <div className="img-circle"></div>
+                        <div className="module top">
+                            <h2>Nazanin De's Blog</h2>
+                        </div>
+                        <div id="social_nav" className="social-icons">
+                            <ul className="nav nav-pills">
+                                <li>
+                                    <a href="https://github.com/Nazanin1369" target="_blank">
+                                        <i className="fa fa-github"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://www.linkedin.com/in/nazanindelam" target="_blank">
+                                        <i className="fa fa-linkedin"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://twitter.com/NazaninDe" target="_blank">
+                                        <i className="fa fa-twitter"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="" target="_blank">
+                                        <i className="fa fa-slack"></i>
+                                    </a>
+                                </li>
+                             </ul>
+                        </div>
                     </div>
                 </div>
             </nav>

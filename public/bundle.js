@@ -25565,23 +25565,58 @@
 	                        "div",
 	                        { className: "navbar-header" },
 	                        _react2.default.createElement(
-	                            "button",
-	                            { type: "button", className: "navbar-toggle collapsed", "data-toggle": "collapse", "data-target": "#navbar", "aria-expanded": "false", "aria-controls": "navbar" },
+	                            "div",
+	                            { className: "module top" },
 	                            _react2.default.createElement(
-	                                "span",
-	                                { className: "sr-only" },
-	                                "Toggle navigation"
-	                            ),
-	                            _react2.default.createElement("span", { className: "icon-bar" }),
-	                            _react2.default.createElement("span", { className: "icon-bar" }),
-	                            _react2.default.createElement("span", { className: "icon-bar" })
+	                                "h2",
+	                                null,
+	                                "Nazanin De's Blog"
+	                            )
 	                        ),
 	                        _react2.default.createElement(
-	                            "a",
-	                            { className: "navbar-brand", href: "#" },
-	                            "Nazanin De's Blog"
-	                        ),
-	                        _react2.default.createElement("div", { className: "img-circle" })
+	                            "div",
+	                            { id: "social_nav", className: "social-icons" },
+	                            _react2.default.createElement(
+	                                "ul",
+	                                { className: "nav nav-pills" },
+	                                _react2.default.createElement(
+	                                    "li",
+	                                    null,
+	                                    _react2.default.createElement(
+	                                        "a",
+	                                        { href: "https://github.com/Nazanin1369", target: "_blank" },
+	                                        _react2.default.createElement("i", { className: "fa fa-github" })
+	                                    )
+	                                ),
+	                                _react2.default.createElement(
+	                                    "li",
+	                                    null,
+	                                    _react2.default.createElement(
+	                                        "a",
+	                                        { href: "https://www.linkedin.com/in/nazanindelam", target: "_blank" },
+	                                        _react2.default.createElement("i", { className: "fa fa-linkedin" })
+	                                    )
+	                                ),
+	                                _react2.default.createElement(
+	                                    "li",
+	                                    null,
+	                                    _react2.default.createElement(
+	                                        "a",
+	                                        { href: "https://twitter.com/NazaninDe", target: "_blank" },
+	                                        _react2.default.createElement("i", { className: "fa fa-twitter" })
+	                                    )
+	                                ),
+	                                _react2.default.createElement(
+	                                    "li",
+	                                    null,
+	                                    _react2.default.createElement(
+	                                        "a",
+	                                        { href: "", target: "_blank" },
+	                                        _react2.default.createElement("i", { className: "fa fa-slack" })
+	                                    )
+	                                )
+	                            )
+	                        )
 	                    )
 	                )
 	            );
