@@ -1,9 +1,9 @@
 # reactBlog
 
 My personal Blog development with React.
-'This repository is under development'
+'This repository is under development and might change over time'
 
-#### Instructions
+####Run
 
 ```bash
 npm install
