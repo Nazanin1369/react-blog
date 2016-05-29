@@ -9,13 +9,10 @@ body {
   /* Margin bottom by footer height */
     margin-bottom: 60px;
     font-family: palatino, georgia, serif;
-    font-size: 20px;
+    font-size: 16px;
     background-color: #fcfcfc;
-    color: #272727;
-    /*color: #fff;*/
+    color: #626262;
     line-height: 1.5em;
-    /** background-color: #232a35; */
-    /** background-color: black;*/
 }
 
 .footer {
@@ -109,10 +106,23 @@ code {
     color: #fff;
 }
 
-.social-icons ul > li > a:hover {
+.social-icons ul > li > a:hover, a:focus {
     color: #000;
 }
 
+/** Post */
+.post h2 > a {
+    color: #000000;
+}
+
+.post > .date {
+    font-size: 13px;
+    font-family: monospace;
+}
+
+.post > p {
+    font-family: monospace;
+}
 /** Editor */
 
 /** Edit form */
