@@ -16,13 +16,13 @@ class QuilEditor extends React.Component {
     render() {
     return (
         <div>
-            <div className="col-xs-6">
+            <div className="col-xs-12">
                 <ReactQuill
                     theme='snow'
                     value={this.state.text}
                     onChange={this.onTextChange.bind(this)} />
             </div>
-            <div className="col-xs-6">
+            <div className="col-xs-12">
                 <pre className="preview language-markup">
                     <code className=" language-markup" >
                         {this.state.text}

@@ -25578,7 +25578,7 @@
 	                            { id: "social_nav", className: "social-icons" },
 	                            _react2.default.createElement(
 	                                "ul",
-	                                { className: "nav nav-pills" },
+	                                { className: "nav" },
 	                                _react2.default.createElement(
 	                                    "li",
 	                                    null,
@@ -25757,7 +25757,7 @@
 	                    { className: 'date' },
 	                    this.state.postObj.date
 	                ),
-	                _react2.default.createElement('div', { className: 'post_content', dangerouslySetInnerHTML: { __html: this.state.postObj.content } })
+	                _react2.default.createElement('div', { className: 'post-content', dangerouslySetInnerHTML: { __html: this.state.postObj.content } })
 	            );
 	        }
 	    }]);
@@ -44242,7 +44242,7 @@
 	                null,
 	                _react2.default.createElement(
 	                    'div',
-	                    { className: 'col-xs-6' },
+	                    { className: 'col-xs-12' },
 	                    _react2.default.createElement(_reactQuill2.default, {
 	                        theme: 'snow',
 	                        value: this.state.text,
@@ -44250,7 +44250,7 @@
 	                ),
 	                _react2.default.createElement(
 	                    'div',
-	                    { className: 'col-xs-6' },
+	                    { className: 'col-xs-12' },
 	                    _react2.default.createElement(
 	                        'pre',
 	                        { className: 'preview language-markup' },

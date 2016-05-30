@@ -110,18 +110,53 @@ code {
     color: #000;
 }
 
+.social-icons > .nav li {
+    float: left;
+}
+
+.social-icons > .nav li>a {
+    border-radius: 4px
+}
+
+.social-icons > .nav li+li {
+    margin-left: 2px
+}
+
+.social-icons .nav li .active>a,.social-icons > .nav li .active>a:focus,.social-icons > .nav li .active>a:hover {
+    color: #f92672;
+}
+
+.nav>li>a:focus,.nav>li>a:hover {
+    color: #f92672;
+    background-color:  inherit!important;
+}
+
+.nav>li>a:focus i,.nav>li>a:hover i {
+    color: #a6e22e;
+}
+
 /** Post */
 .post h2 > a {
     color: #000000;
 }
 
+.post h2 > a:hover {
+    color: #f92672;
+}
+
 .post > .date {
     font-size: 13px;
     font-family: monospace;
+    margin-bottom: 5px;
 }
 
 .post > p {
     font-family: monospace;
+}
+
+.post-content img {
+    height: 500px;
+    margin-left: 40px;
 }
 /** Editor */
 
@@ -145,7 +180,7 @@ code {
 }
 
 .editForm .quill {
-    height: 300px;
+    height: 600px;
     border: 1px solid #ccc;
 }
 

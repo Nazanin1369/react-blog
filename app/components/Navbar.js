@@ -10,7 +10,7 @@ class Navbar extends React.Component {
                             <h2>Nazanin De's Blog</h2>
                         </div>
                         <div id="social_nav" className="social-icons">
-                            <ul className="nav nav-pills">
+                            <ul className="nav">
                                 <li>
                                     <a href="https://github.com/Nazanin1369" target="_blank">
                                         <i className="fa fa-github"></i>
