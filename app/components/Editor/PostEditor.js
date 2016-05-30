@@ -1,9 +1,7 @@
 import React from 'react';
-import {Editor, EditorState} from 'draft-js';
 import ReactfireMixin from 'reactfire';
 import Firebase from 'firebase';
 import Rebase from 're-base'
-import DraftEditor from './Draft/DraftEditor';
 import QuilEditor from './Quil/QuilEditor';
 import Router from 'react-router';
 
@@ -38,8 +36,9 @@ class PostEditor extends React.Component {
 
     handleSumbit() {
         var newNote = {};
-        newNote.id = (this.state.post.title.value).replace(/\s+/g, '');
-        newNote.date = new Date(this.state.post.date.value.trim()).toDateString();
+        this.state.post.id = (this.state.post.title.value).replace(/\s+/g, '').replace('.', '');
+        newNote.id = this.state.post.id;
+        newNote.date = this.state.post.date.value.trim();
         newNote.title = this.state.post.title.value;
         newNote.summary = this.state.post.summary.value;
         newNote.content = this.state.post.content;
