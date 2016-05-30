@@ -45,6 +45,12 @@ code {
   font-size: 80%;
 }
 
+pre {
+    margin: 0px;
+    border: none;
+    border-radius: 0px;
+}
+
 .my-nav {
    /*background-image: url('./images/back.jpg');*/
    background:

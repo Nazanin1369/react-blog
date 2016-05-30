@@ -25697,7 +25697,7 @@
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-	var base = _reBase2.default.createClass('https://nazaninblog.firebaseio.com/');
+	var base = _reBase2.default.createClass('https://nazaninblog.firebaseio.com/nazaninblog');
 
 	var Post = function (_React$Component) {
 	    _inherits(Post, _React$Component);
@@ -25736,10 +25736,12 @@
 	    }, {
 	        key: 'init',
 	        value: function init(postId) {
-	            this.ref = base.bindToState('posts/' + postId, {
+	            console.log(postId, base);
+	            base.bindToState('posts/' + postId, {
 	                context: this,
 	                state: 'postObj'
 	            });
+	            console.log('staet: ', this.state);
 	        }
 	    }, {
 	        key: 'render',
@@ -25868,7 +25870,7 @@
 	            newNote.summary = this.state.post.summary.value;
 	            newNote.content = this.state.post.content;
 	            console.log(newNote, this.state);
-	            base.post('posts/' + newNote.id, {
+	            base.push().set('posts/' + newNote.id, {
 	                data: newNote,
 	                then: function then() {
 	                    console.log('done');

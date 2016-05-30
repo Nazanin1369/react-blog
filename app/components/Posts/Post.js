@@ -2,7 +2,7 @@ import React from 'react';
 import ReactfireMixin from 'reactfire';
 import Firebase from 'firebase';
 import Rebase from 're-base';
-const base = Rebase.createClass('https://nazaninblog.firebaseio.com/')
+const base = Rebase.createClass('https://nazaninblog.firebaseio.com/nazaninblog')
 
 class Post extends React.Component {
     constructor(props){
@@ -26,7 +26,7 @@ class Post extends React.Component {
       base.removeBinding(this.ref);
     }
     init(postId) {
-       this.ref =  base.bindToState(`posts/${postId}`, {
+       base.bindToState(`posts/${postId}`, {
             context: this,
             state: 'postObj'
         });
