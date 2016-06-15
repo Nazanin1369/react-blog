@@ -3,6 +3,8 @@
 My personal Blog development with React.
 'This repository is under development and might change over time'
 
+http://nazanin1369.github.io/public/#/?_k=p8p2eu/blog
+
 ####Run
 
 ```bash

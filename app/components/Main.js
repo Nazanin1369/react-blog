@@ -8,10 +8,9 @@ const Main =  ({ children }) => {
     return (
         <div className="main-container">
             <Navbar />
-            <div className="container">
+            <div className="container center">
                 {children}
             </div>
-            <Footer />
         </div>
     )
 };

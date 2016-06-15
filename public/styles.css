@@ -2,24 +2,21 @@
 -------------------------------------------------- */
 html {
   position: relative;
-  min-height: 100%;
+  height: 100%;
 }
 
 body {
-  /* Margin bottom by footer height */
-    margin-bottom: 60px;
     font-family: palatino, georgia, serif;
-    font-size: 16px;
+    font-size: 20px;
     background-color: #fcfcfc;
-    color: #626262;
+    color: #272727;
     line-height: 1.5em;
 }
 
 .footer {
-  position: absolute;
+  position: relative;
   bottom: 0;
   width: 100%;
-  /* Set the fixed height of the footer here */
   height: 60px;
 }
 
@@ -27,9 +24,14 @@ body {
 /* Custom page CSS
 -------------------------------------------------- */
 /* Not required for template or sticky footer method. */
+.main-container {
+    position: relative;
+    padding-top: 1px;
+}
 
 .main-container > .container {
-  padding: 100px 50px 0px 40px;
+  padding: 0px 50px 0px 40px;
+  height: 100%;
 }
 .container .text-muted {
   margin: 20px 0;
@@ -80,11 +82,12 @@ pre {
 .module {
 
   background-size: cover;
-  width: 300px;
+  width: 100%;
   height: 20px;
   margin: 10px 0 0 10px;
   position: relative;
   float: left;
+
 }
 
 .top h2 {
@@ -142,22 +145,27 @@ pre {
 }
 
 /** Post */
-.post h2 > a {
+pre {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.post {
+    height: 100%;
+    width: 800px;
+}
+
+.short-post h2 > a, .post h2 > a {
     color: #000000;
 }
 
-.post h2 > a:hover {
+.short-post  h2 > a:hover, .post h2 > a:hover {
     color: #f92672;
 }
 
-.post > .date {
+.short-post > .date, .post > .date {
     font-size: 13px;
-    font-family: monospace;
     margin-bottom: 5px;
-}
-
-.post > p {
-    font-family: monospace;
 }
 
 .post-content img {
@@ -196,4 +204,33 @@ pre {
 
 .editForm .preview {
      height: 300px;
+}
+
+
+
+@media (max-width: 1000px) {
+.center{}
+.center-inner{
+    left: 15%;
+    top: 25%;
+    position: absolute;
+    width: 70%;
+    height: 300px;
+    text-align: left;
+    max-width: 800px;
+    max-height: 500px;
+    }
+}
+
+@media (min-width: 1000px) {
+.center{left:50%;top:25%;position:absolute;}
+.center-inner{
+    width: 800px;
+    height: 100%;
+    margin-left: -400px;
+    height: 100%;
+    text-align: left;
+    max-width: 800px;
+    max-height: 500px;
+    }
 }

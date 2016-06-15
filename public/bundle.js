@@ -24097,10 +24097,9 @@
 	        _react2.default.createElement(_Navbar2.default, null),
 	        _react2.default.createElement(
 	            'div',
-	            { className: 'container' },
+	            { className: 'container center' },
 	            children
-	        ),
-	        _react2.default.createElement(_Footer2.default, null)
+	        )
 	    );
 	};
 
@@ -24128,7 +24127,7 @@
 	    { className: "footer" },
 	    _react2.default.createElement(
 	      "div",
-	      { className: "container" },
+	      { className: "container center" },
 	      _react2.default.createElement(
 	        "p",
 	        { className: "text-muted" },
@@ -24225,7 +24224,7 @@
 	        value: function render() {
 	            return _react2.default.createElement(
 	                'section',
-	                { className: 'posts' },
+	                { className: 'posts center-inner' },
 	                _react2.default.createElement(_PostList2.default, { posts: this.state.posts })
 	            );
 	        }
@@ -25494,7 +25493,7 @@
 
 	    return _react2.default.createElement(
 	        'div',
-	        { className: 'post' },
+	        { className: 'short-post' },
 	        _react2.default.createElement(
 	            'h2',
 	            null,
@@ -25508,11 +25507,6 @@
 	            'div',
 	            { className: 'date' },
 	            post.date
-	        ),
-	        _react2.default.createElement(
-	            'p',
-	            null,
-	            post.summary
 	        )
 	    );
 	};
@@ -25736,19 +25730,17 @@
 	    }, {
 	        key: 'init',
 	        value: function init(postId) {
-	            console.log(postId, base);
 	            base.bindToState('posts/' + postId, {
 	                context: this,
 	                state: 'postObj'
 	            });
-	            console.log('staet: ', this.state);
 	        }
 	    }, {
 	        key: 'render',
 	        value: function render() {
 	            return _react2.default.createElement(
 	                'div',
-	                { className: 'post' },
+	                { className: 'post center-inner' },
 	                _react2.default.createElement(
 	                    'h2',
 	                    null,
@@ -25870,7 +25862,7 @@
 	            newNote.summary = this.state.post.summary.value;
 	            newNote.content = this.state.post.content;
 	            console.log(newNote, this.state);
-	            base.push().set('posts/' + newNote.id, {
+	            base.post('posts/' + newNote.id, {
 	                data: newNote,
 	                then: function then() {
 	                    console.log('done');

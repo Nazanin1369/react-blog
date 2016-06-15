@@ -33,7 +33,7 @@ class Post extends React.Component {
     }
     render() {
          return (
-            <div className="post">
+            <div className="post center-inner">
                 <h2><a>{this.state.postObj.title}</a></h2>
                 <div className="date">{this.state.postObj.date}</div>
                 <div className="post-content" dangerouslySetInnerHTML={{__html: this.state.postObj.content}}>

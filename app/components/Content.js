@@ -34,7 +34,7 @@ class Content extends React.Component {
     }
     render() {
         return (
-            <section className="posts">
+            <section className="posts center-inner">
                 <PostList posts={this.state.posts} />
             </section>
          )
