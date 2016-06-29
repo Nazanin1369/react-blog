@@ -30,7 +30,7 @@ body {
 }
 
 .main-container > .container {
-  padding: 0px 50px 0px 40px;
+  padding: 100px 50px 0px 40px;
   height: 100%;
 }
 .container .text-muted {
