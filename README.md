@@ -6,8 +6,7 @@ My personal Blog development with React.
 View here:
 http://nazanin1369.github.io/public/#/?_k=p8p2eu/blog
 
-#### Run
-
+#### How to Run
 ```bash
 npm install
 webpack -w
