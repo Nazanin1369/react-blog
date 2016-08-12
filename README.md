@@ -22,4 +22,5 @@ webpack -w
 * Firebase
 * Webpack
 * React-Quill editor
+* Qeditor
 
